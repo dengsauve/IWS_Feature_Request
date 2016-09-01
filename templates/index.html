@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<head>
+    <title>IWS Feature Request</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css"/>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="well">
+                <div class="modal-content">
+					
+					<!-- header -->
+					<div class="modal-header">
+						<h3 class="modal-title">Feature Request Information</h3>
+					</div>
+                    
+					<!-- body -->
+					<div class="modal-body">
+						<form role="form">
+                            <h4>What is the Feature's name?</h4>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Title">
+							</div>
+                            <h4>Tell us a little or a lot about this feature.</h4>
+							<div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Detailed description of your feature request."></textarea>
+							</div>
+                            <h4>Who are you?</h4>
+                            <div class="form-group">
+								<select class="form-control">
+                                    <option>Client A</option>
+                                    <option>Client B</option>
+                                    <option>Client C</option>                                
+                                </select>
+                            </div>
+                            <h4>What is the priority of this request?</h4>
+                            <div class="form-group">
+								<select class="form-control">
+                                    <option>Priority 1</option>
+                                    <option>Priority 2</option>
+                                    <option>Priority n</option>                                
+                                </select>
+							</div>
+                            <h4>When will this request be implemented?</h4>
+                            <div class="input-group input-append date" id="datePicker">
+                                <input type="text" class="form-control" name="date" />
+                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <script>
+                                $(document).ready(function() { $('#datePicker') } )
+                            </script>
+                            <h4>Ticket urls can go here.</h4>
+                            <div class="form-group">
+								<input type="url" class="form-control" placeholder="Relevant Ticket URL">
+							</div>
+                            <h4>What production area does this concern?</h4>
+                            <div class="form-group">
+								<select class="form-control">
+                                    <option>Policies</option>
+                                    <option>Billing</option>
+                                    <option>Claims</option>     
+                                    <option>Reports</option>
+                                </select>
+							</div>
+						</form>
+					</div>
+                    
+					<!-- button -->
+					<div class="modal-footer">
+						<button class="btn btn-primary btn-block">Submit Request</button>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
