@@ -1,7 +1,19 @@
+body{
+    background-color: dodgerblue;
+}
+
 textarea{
     resize: none;
 }
 
 .modal-title{
     color: cadetblue;
+}
+
+.container div{
+    background-color: transparent;
+}
+
+.container-fluid div{
+    background-color: transparent;
 }
