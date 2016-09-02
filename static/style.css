@@ -9,3 +9,7 @@ textarea{
 .modal-title{
     color: cadetblue;
 }
+
+#login-header h3{
+    text-align: center;
+}
