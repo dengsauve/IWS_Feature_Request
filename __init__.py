@@ -1,6 +1,11 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.congif['SQLALCHEMY_URI_DATABASE'] = "sqlite:////tmp/temp.db"
+db = SQLAlchemy(app)
+
+from models import Request, Client, ProductArea, User
 
 @app.route('/')
 def render_main():
