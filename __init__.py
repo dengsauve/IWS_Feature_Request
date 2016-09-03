@@ -5,9 +5,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////tmp/temp.db"
 db = SQLAlchemy(app)
 
-db.create_all()
-
-class Request(db.model):
+class Request(db.Model):
     __tablename__ = 'Request'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
@@ -36,7 +34,7 @@ class Request(db.model):
         return '<Request> %r' % self.title
 
 
-class Client(db.model):
+class Client(db.Model):
     __tablename__ = 'Client'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
@@ -48,7 +46,7 @@ class Client(db.model):
         return '<Client> %r' % self.name
 
 
-class ProductArea(db.model):
+class ProductArea(db.Model):
     __tablename__ = 'ProductArea'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
@@ -60,7 +58,7 @@ class ProductArea(db.model):
         return '<ProductArea> %r' % self.name
 
 
-class User(db.model):
+class User(db.Model):
     __tablename__ = 'User'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50))
