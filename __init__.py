@@ -5,6 +5,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////tmp/temp.db"
 db = SQLAlchemy(app)
 
+db.create_all()
+
 class Request(db.model):
     __tablename__ = 'Request'
     id = db.Column(db.Integer, primary_key=True)
