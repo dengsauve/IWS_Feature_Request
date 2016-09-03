@@ -1,5 +1,3 @@
-from __init__ import db
-
 class Request(db.Model):
     __tablename__ = 'Request'
     id = db.Column(db.Integer, primary_key=True)
