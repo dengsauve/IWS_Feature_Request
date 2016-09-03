@@ -63,7 +63,7 @@ class User(db.model):
     client_id = db.Column(db.Integer, db.ForeignKey('client.id'))
     client = db.relationship('Client', backref=db.backref('users', lazy='dynamic'))
 
-    def __init__(self, username, email, password, idAdmin=False, client):
+    def __init__(self, username, email, password, idAdmin, client):
         self.username = username
         self.email = email
         self.password = password
