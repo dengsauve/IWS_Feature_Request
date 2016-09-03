@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_URI_DATABASE'] = "sqlite:////tmp/temp.db"
 db = SQLAlchemy(app)
 
-# import models
+from models import Request, Client, ProductArea, User
 
 @app.route('/')
 def render_main():
