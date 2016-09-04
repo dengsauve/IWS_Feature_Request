@@ -11,14 +11,14 @@ class Request(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
     description = db.Column(db.String(1000))
-    client_id = db.Column(db.Integer, db.ForeignKey('client.id'))
+    client_id = db.Column(db.Integer, db.ForeignKey('Client.id'))
     client = db.relationship('Client', backref=db.backref('requests', lazy='dynamic'))
     priority = db.Column(db.Integer)
     targetdate = db.Column(db.Date)
     ticketurl = db.Column(db.String(200))
-    productarea_id = db.Column(db.Integer, db.ForeignKey('productarea.id'))
+    productarea_id = db.Column(db.Integer, db.ForeignKey('ProductArea.id'))
     productarea = db.relationship('ProductArea', backref=db.backref('requests', lazy='dynamic'))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('User.id'))
     user = db.relationship('User', backref=db.backref('requests', lazy='dynamic'))
 
     def __init__(self, title, description, client, priority, targetdate, ticketurl, productarea, user):
@@ -66,7 +66,7 @@ class User(db.Model):
     email = db.Column(db.String(50))
     password = db.Column(db.String(16))
     isAdmin = db.Column(db.Boolean)
-    client_id = db.Column(db.Integer, db.ForeignKey('client.id'))
+    client_id = db.Column(db.Integer, db.ForeignKey('Client.id'))
     client = db.relationship('Client', backref=db.backref('users', lazy='dynamic'))
 
     def __init__(self, username, email, password, idAdmin, client):
