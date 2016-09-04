@@ -88,5 +88,14 @@ def render_main():
 def render_home():
     return render_template('index.html')
 
+@app.route('/example/home')
+def render_ex_index():
+    return render_template('ex_index.html')
+
+@app.route('/example/login')
+def render_ex_login():
+    return render_template('ex_login.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
