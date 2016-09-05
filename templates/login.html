@@ -1,42 +1,37 @@
-<!DOCTYPE HTML>
-<head>
-    <title>IWS Login</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <div class="container-fluid">
-            <div class="well">
-                <div class="modal-content">
-					
-					<!-- header -->
-					<div class="modal-header">
-						<h3 class="modal-title" id="login-header">Login to IWS Feature Services</h3>
-					</div>
-                    
-					<!-- body -->
-					<div class="modal-body">
-						<form role="form">
-                            <h4>Username</h4>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="email">
-							</div>
-                            <h4>Password</h4>
-                            <div class="form-group">
-								<input type="password" class="form-control" placeholder="password">
-							</div>
-						</form>
-					</div>
-                    
-					<!-- button -->
-					<div class="modal-footer">
-                        <a href="/home"><button class="btn btn-primary btn-block">Continue</button></a>
-					</div>
+{% extends "parent.html" %}
+{% block title %}IWS Login{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="well">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <h3 class="modal-title" id="login-header">Login to IWS Feature Services</h3>
+                </div>
+
+                <!-- body -->
+                <div class="modal-body">
+                    <form role="form">
+                        <h4>Username</h4>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="email">
+                        </div>
+                        <h4>Password</h4>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="password">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <a href="/home"><button class="btn btn-primary btn-block">Continue</button></a>
                 </div>
             </div>
         </div>
     </div>
-</body>
+{% endblock %}
