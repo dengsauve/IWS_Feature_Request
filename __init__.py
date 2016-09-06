@@ -84,7 +84,7 @@ class User(db.Model):
 def render_main():
     return render_template('login.html')
 
-@app.route('/home')
+@app.route('/home', methods=['POST'])
 def render_home():
     areas = ProductArea.query.filter(ProductArea.name).all()
     return render_template('index.html', areas)
