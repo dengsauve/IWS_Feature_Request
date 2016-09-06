@@ -13,3 +13,8 @@ textarea{
 #login-header h3{
     text-align: center;
 }
+
+#server-message span{
+    text-decoration: bold;
+    color: red;
+}
