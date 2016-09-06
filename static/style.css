@@ -17,4 +17,6 @@ textarea{
 #server-message{
     font-weight: bold;
     color: red;
+    background-color: indianred;
+    border-radius: 15px;
 }
