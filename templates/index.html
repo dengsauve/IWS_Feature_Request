@@ -25,9 +25,9 @@
                     <h4>Who are you?</h4>
                     <div class="form-group">
                         <select class="form-control">
-                            <option>Client A</option>
-                            <option>Client B</option>
-                            <option>Client C</option>
+                            {% for client in clients %}
+                            <option>{{ client.name }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <h4>What is the priority of this request?</h4>

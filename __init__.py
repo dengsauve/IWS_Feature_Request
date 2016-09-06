@@ -86,8 +86,9 @@ def render_main():
 
 @app.route('/home', methods=['GET', 'POST'])
 def render_home():
-    areas = ProductArea.query.all()
-    return render_template('index.html', areas=areas)
+    clients = Client.query.with_entities(Client.name)
+    areas = ProductArea.query.with_entities(ProductArea.name)
+    return render_template('index.html', areas=areas, clients=clients)
 
 
 if __name__ == '__main__':
