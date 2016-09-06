@@ -92,5 +92,10 @@ def render_home():
     return render_template('index.html', areas=areas, clients=clients)
 
 
+@app.errorhandler(404)
+    def render_page_not_found():
+        return render_template('404.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
