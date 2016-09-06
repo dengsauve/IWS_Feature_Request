@@ -86,7 +86,7 @@ def render_main():
 
 @app.route('/home', methods=['GET', 'POST'])
 def render_home():
-    areas = ProductArea.query.filter(ProductArea.name).all()
+    areas = ProductArea.query.all()
     return render_template('index.html', areas=areas)
 
 
