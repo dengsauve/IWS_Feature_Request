@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <select class="form-control">
                             {% for area in areas %}
-                            <option>{% area %}</option>
+                            <option>{{ area.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
