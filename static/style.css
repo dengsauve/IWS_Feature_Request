@@ -14,7 +14,7 @@ textarea{
     text-align: center;
 }
 
-#server-message span{
+#server-message{
     text-decoration: bold;
     color: red;
 }
