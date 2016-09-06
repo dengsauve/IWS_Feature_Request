@@ -81,7 +81,7 @@ class User(db.Model):
 
 
 @app.route('/')
-@app.route('/login/' strict_slashes=False)
+@app.route('/login/', strict_slashes=False)
 def render_main():
     return render_template('login.html')
 
