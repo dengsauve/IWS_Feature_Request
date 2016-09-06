@@ -19,4 +19,6 @@ textarea{
     color: red;
     background-color: #FFCFCF;
     border-radius: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
