@@ -94,7 +94,7 @@ def render_home():
 
 @app.errorhandler(404)
 def render_page_not_found(error_message):
-    return render_template('404.html'), error_message
+    return render_template('404.html', error=error_message)
 
 
 if __name__ == '__main__':
