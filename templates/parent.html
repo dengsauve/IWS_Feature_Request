@@ -15,6 +15,7 @@
           $( "#datepicker" ).datepicker({
               dateFormat: 'yy-mm-dd',
               minDate: 14,
+              beforeShowDay: $.datepicker.noWeekends,
             }
           );
       } );
