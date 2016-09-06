@@ -86,7 +86,8 @@ def render_main():
 
 @app.route('/home')
 def render_home():
-    return render_template('index.html')
+    areas = ProductArea.query.filter(ProductArea.name).all()
+    return render_template('index.html', areas)
 
 
 if __name__ == '__main__':
