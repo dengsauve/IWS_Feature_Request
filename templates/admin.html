@@ -33,12 +33,12 @@
                         <tr>
                             <td>{{request.title}}</td>
                             <td>{{request.description}}</td>
-                            <td>{{request.client}}</td>
+                            <td>{{request.client.name}}</td>
                             <td>{{request.priority}}</td>
                             <td>{{request.targetdate}}</td>
                             <td>{{request.ticketurl}}</td>
-                            <td>{{request.productarea}}</td>
-                            <td>{{request.user}}</td>
+                            <td>{{request.productarea.name}}</td>
+                            <td>{{request.user.username}}</td>
                         <tr>
                         {% endfor %}
                     </tbody>
@@ -105,7 +105,7 @@
                             {% else %}
                             <td>User</td>
                             {% endif %}
-                            <td>{{ user.client }}</td>
+                            <td>{{ user.client.name }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
