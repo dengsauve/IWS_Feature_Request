@@ -1,0 +1,114 @@
+{% extends "parent.html" %}
+{% block title %}Godmode{% endblock %}
+{% block head %}{{ super() }}{% endblock %}
+{% block body%}
+<div class="container-fluid">
+    <div class="well">
+        <div class="modal-content">
+
+            <!-- header -->
+            <div class="modal-header">
+                <h3 class="modal-title">Administration Center <span id="code">For the Sudoers of the World</span></h3>
+            </div>
+
+            <!-- body -->
+            <div class="modal-body">
+                <!-- Requests Table -->
+                <table>
+                    <caption>Requests</caption>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Client</th>
+                            <th>Priority</th>
+                            <th>Target Date</th>
+                            <th>URL</th>
+                            <th>Product Area</th>
+                            <th>By User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for request in requests %}
+                        <tr>
+                            <td>{{request.title}}</td>
+                            <td>{{request.description}}</td>
+                            <td>{{request.client}}</td>
+                            <td>{{request.priority}}</td>
+                            <td>{{request.targetdate}}</td>
+                            <td>{{request.ticketurl}}</td>
+                            <td>{{request.productarea}}</td>
+                            <td>{{request.user}}</td>
+                        <tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <!-- Clients' Table -->
+                <table>
+                    <caption>Clients</caption>
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for client in clients %}
+                        <tr>
+                            <td>
+                                {{ client.name }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Production Area Table -->
+                <table>
+                    <caption>Production Areas</caption>
+                    <thead>
+                        <tr>
+                            <th>Area Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for area in areas %}
+                        <tr>
+                            <td>
+                                {{ area.name }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Users Table -->
+                <table>
+                    <caption>User Profiles</caption>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>E-mail</th>
+                            <th>Password</th>
+                            <th>User Status</th>
+                            <th>Client</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.password }}</td>
+                            {% if user.isAdmin %}
+                            <td>Administrator</td>
+                            {% else %}
+                            <td>User</td>
+                            {% endif %}
+                            <td>{{ user.client }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -91,6 +91,13 @@ def render_home():
     areas = ProductArea.query.with_entities(ProductArea.name)
     return render_template('index.html', areas=areas, clients=clients)
 
+@app.route('/admin')
+def god_mode():
+    requests = Request.query.all()
+    clients = Client.query.all()
+    areas = ProductArea.query.all()
+    users = User.query.all()
+    return render_template('admin.html', requests=requests, clients=clients, areas=areas, users=users)
 
 @app.errorhandler(404)
 def render_page_not_found(error_message):
