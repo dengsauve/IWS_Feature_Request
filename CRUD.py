@@ -1,4 +1,4 @@
-from __init__ import db, User
+from __init__ import db, User, Request
 import csv
 
 Mock_Users, Mock_Requests = [], []
@@ -13,14 +13,13 @@ with open('documents/Request_Data.csv') as g:
 
 # user_counter = 2
 for user in Mock_Users:
-    new_user = User(user[0], user[1], user[2], user[3], user[4])
+    new_user = User(username=user[0], email=user[1], password=user[2], isAdmin=user[3], client_id=user[4])
     db.session.add(new_user)
 
-db.session.commit()
-
+db.session.flush()
 
 for request in Mock_Requests[1:]:
-    new_request = Request(request[0], request[1], request[2], request[3], request[4], request[5], request[6], request[7])
+    new_request = Request(title=request[0], description=request[1], client_id=request[2], priority=request[3], targetdate=request[4], ticketurl=request[5], productarea_id=request[6], user_id=request[7])
     db.session.add(new_request)
 
 db.session.commit()
