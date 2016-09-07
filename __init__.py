@@ -103,6 +103,10 @@ def god_mode():
 def render_page_not_found(error_message):
     return render_template('404.html', error=error_message)
 
+@app.errorhandler(500)
+def render_page_not_found(error_message):
+    return render_template('500.html', error=error_message)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
