@@ -10,10 +10,6 @@ textarea{
     color: cadetblue;
 }
 
-#adminBackground.modal-content{
-    background-color: black;
-}
-
 .table{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -26,6 +22,18 @@ textarea{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#userPassword{
+    color: black;
+}
+
+#userPassword:hover{
+    color: inherit;
+}
+
+#adminBackground.modal-content{
+    background-color: black;
 }
 
 #login-header h3{

@@ -20,8 +20,8 @@
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Client</th>
-                            <th>Priority</th>
+                            <th class="col-md-1 col-lg-1 col-xl-1">Client</th>
+                            <th class="col-md-1 col-lg-1 col-xl-1">Priority</th>
                             <th>Target Date</th>
                             <th>URL</th>
                             <th>Product Area</th>
@@ -33,8 +33,8 @@
                         <tr>
                             <th scope="row">{{request.title}}</td>
                             <td>{{request.description}}</td>
-                            <td>{{request.client.name}}</td><!-- Need to select ref col value -->
-                            <td>{{request.priority}}</td>
+                            <td class="col-md-1 col-lg-1 col-xl-1">{{request.client.name}}</td><!-- Need to select ref col value -->
+                            <td class="col-md-1 col-lg-1 col-xl-1">{{request.priority}}</td>
                             <td>{{request.targetdate}}</td>
                             <td>{{request.ticketurl}}</td>
                             <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
@@ -91,7 +91,7 @@
                             <th>E-mail</th>
                             <th>Password</th>
                             <th>User Status</th>
-                            <th>Client</th>
+                            <th class="col-md-1 col-lg-1 col-xl-1">Client</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -99,13 +99,13 @@
                         <tr>
                             <th scope="row">{{ user.username }}</td>
                             <td>{{ user.email }}</td>
-                            <td>{{ user.password }}</td>
+                            <td id="userPassword">{{ user.password }}</td>
                             {% if user.isAdmin %}
                             <td>Administrator</td>
                             {% else %}
                             <td>User</td>
                             {% endif %}
-                            <td>{{ user.client.name }}</td><!-- Need to select ref col value -->
+                            <td class="col-md-1 col-lg-1 col-xl-1">{{ user.client.name }}</td><!-- Need to select ref col value -->
                         </tr>
                         {% endfor %}
                     </tbody>
