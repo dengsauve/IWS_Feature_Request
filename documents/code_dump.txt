@@ -1,0 +1,1 @@
+select Request.title from Request, Client where Client.name="Client A" and Request.client_id = Client.id;
