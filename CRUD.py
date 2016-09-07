@@ -1,5 +1,5 @@
 from __init__ import db, User, Request
-import csv
+import csv, datetime
 
 Mock_Users, Mock_Requests = [], []
 
@@ -18,7 +18,8 @@ with open('documents/Request_Data.csv') as g:
 # db.session.flush()
 
 for request in Mock_Requests[1:]:
-    new_request = Request(title=request[0], description=request[1], client_id=request[2], priority=request[3], targetdate=request[4], ticketurl=request[5], productarea_id=request[6], user_id=request[7])
+    tdate = datetime.datetime.rstrip(request[4], "%Y-%m-%d")
+    new_request = Request(title=request[0], description=request[1], client_id=request[2], priority=request[3], targetdate=tdate, ticketurl=request[5], productarea_id=request[6], user_id=request[7])
     db.session.add(new_request)
 
 db.session.commit()
