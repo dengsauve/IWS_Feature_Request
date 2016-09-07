@@ -13,7 +13,7 @@ with open('documents/Request_Data.csv') as g:
 
 # user_counter = 2
 for user in Mock_Users:
-    new_user = User(username=user[0], email=user[1], password=user[2], client_id=user[4])
+    new_user = User(username=user[0], email=user[1], password=user[2], isAdmin=False, client_id=user[4])
     db.session.add(new_user)
 
 db.session.flush()
