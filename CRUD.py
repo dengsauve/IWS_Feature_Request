@@ -4,10 +4,12 @@ import csv
 Mock_Users, Mock_Users = [], []
 
 with open('documents/Mock_User_Data.csv') as f:
-    Mock_Users = csv.reader(f)
+    reader = csv.reader(f)
+    Mock_Users = reader.readlines()
 
 with open('documents/Mock_Request_Data.csv') as g:
-    Mock_Users = csv.reader(g)
+    reader = csv.reader(g)
+    Mock_Users = reader.readlines()
 
 # user_counter = 2
 for user in Mock_Users:
