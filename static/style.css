@@ -15,9 +15,9 @@ textarea{
 }
 
 .table{
+    border-radius: 25px;
     border: 2px solid;
     border-collapse: collapse;
-    border-radius: 25px;
 }
 
 #login-header h3{
