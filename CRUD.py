@@ -17,8 +17,8 @@ with open('documents/Request_Data.csv') as g:
 
 # db.session.flush()
 
-# for request in Mock_Requests[1:]:
-#     new_request = Request(title=request[0], description=request[1], client_id=request[2], priority=request[3], targetdate=request[4], ticketurl=request[5], productarea_id=request[6], user_id=request[7])
-#     db.session.add(new_request)
+for request in Mock_Requests[1:]:
+    new_request = Request(title=request[0], description=request[1], client_id=request[2], priority=request[3], targetdate=request[4], ticketurl=request[5], productarea_id=request[6], user_id=request[7])
+    db.session.add(new_request)
 
 db.session.commit()
