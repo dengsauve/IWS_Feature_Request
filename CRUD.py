@@ -1,15 +1,15 @@
 from __init__ import db, User
 import csv
 
-Mock_Users, Mock_Users = [], []
+Mock_Users, Mock_Requests = [], []
 
-with open('documents/Mock_User_Data.csv') as f:
-    reader = csv.reader(f)
-    Mock_Users = list(reader)
+with open('documents/User_Data.csv') as f:
+    freader = csv.reader(f)
+    Mock_Users = list(freader)
 
-with open('documents/Mock_Request_Data.csv') as g:
-    reader = csv.reader(g)
-    Mock_Users = list(reader)
+with open('documents/Request_Data.csv') as g:
+    greader = csv.reader(g)
+    Mock_Requests = list(greader)
 
 # user_counter = 2
 for user in Mock_Users:
