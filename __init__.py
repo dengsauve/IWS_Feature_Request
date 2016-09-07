@@ -21,15 +21,15 @@ class Request(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('User.id'))
     user = db.relationship('User', backref=db.backref('requests', lazy='dynamic'))
 
-    def __init__(self, title, description, client, priority, targetdate, ticketurl, productarea, user):
+    def __init__(self, title, description, client_id, priority, targetdate, ticketurl, productarea_id, user_id):
         self.title = title
         self.description = description
-        self.client = client
+        self.client_id = client_id
         self.priority = priority
         self.targetdate = targetdate
         self.ticketurl = ticketurl
-        self.productarea = productarea
-        self.user = user
+        self.productarea_id = productarea_id
+        self.user_id = user_id
 
     def __repr__(self):
         return '<Request> %r' % self.title
