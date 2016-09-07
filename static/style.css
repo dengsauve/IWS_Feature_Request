@@ -10,6 +10,10 @@ textarea{
     color: cadetblue;
 }
 
+.modal-content{
+    background-color: black;
+}
+
 #login-header h3{
     text-align: center;
 }
