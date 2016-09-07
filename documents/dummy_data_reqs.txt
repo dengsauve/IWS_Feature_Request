@@ -1,0 +1,5 @@
+For Table Request:
+title, description, client_id, priority, targetdate(YYYY-MM-DD), URL, area_id, user_id
+
+For Table User:
+username, email, password(16 char max), False, client_id
