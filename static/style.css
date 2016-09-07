@@ -19,6 +19,13 @@ textarea{
     border-bottom-right-radius: 5px;
     border-color: #55595C;
     border-collapse: collapse;
+    table-layout:fixed;
+}
+
+.table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #login-header h3{
