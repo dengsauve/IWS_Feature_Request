@@ -18,14 +18,14 @@
                 <table id="adminTables" class="table table-hover table-sm table-inverse">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Client</th>
+                            <th class="col-lg-1 col-md-1">Title</th>
+                            <th class="col-lg-1 col-md-1">Description</th>
+                            <th class="col-lg-1 col-md-1">Client</th>
                             <th class="col-lg-1 col-md-1">Priority</th>
-                            <th>Target Date</th>
-                            <th>URL</th>
-                            <th>Product Area</th>
-                            <th>By User</th>
+                            <th class="col-lg-2 col-md-2">Target Date</th>
+                            <th class="col-lg-2 col-md-2">URL</th>
+                            <th class="col-lg-2 col-md-2">Product Area</th>
+                            <th class="col-lg-2 col-md-2">By User</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,14 +34,14 @@
                         <tr>
                             <form action="/details" method="POST">
                                 <input type="hidden" name="request_id" value="{{request.id}}" />
-                                <th scope="row"><button type="submit" class="btn btn-info btn-sm btn-block" id="requestTitleButton">{{request.title}}</button></td>
-                                <td>{{request.description}}</td>
-                                <td>{{request.client.name}}</td><!-- Need to select ref col value -->
+                                <th scope="row" class="col-lg-1 col-md-1"><button type="submit" class="btn btn-info btn-sm btn-block" id="requestTitleButton">{{request.title}}</button></td>
+                                <td class="col-lg-1 col-md-1">{{request.description}}</td>
+                                <td class="col-lg-1 col-md-1">{{request.client.name}}</td><!-- Need to select ref col value -->
                                 <td class="col-lg-1 col-md-1">{{request.priority}}</td>
-                                <td>{{request.targetdate}}</td>
-                                <td>{{request.ticketurl}}</td>
-                                <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
-                                <td>{{request.user.username}}</td><!-- Need to select ref col value -->
+                                <td class="col-lg-2 col-md-2">{{request.targetdate}}</td>
+                                <td class="col-lg-2 col-md-2">{{request.ticketurl}}</td>
+                                <td class="col-lg-2 col-md-2">{{request.productarea.name}}</td><!-- Need to select ref col value -->
+                                <td class="col-lg-2 col-md-2">{{request.user.username}}</td><!-- Need to select ref col value -->
                             </form>
                         </tr>
                         {% set counter = counter + 1 %}
