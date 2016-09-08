@@ -39,7 +39,6 @@ textarea{
 #requestDetails.table{
     background-color: #373A3C;
     color: #ECEEEF;
-    table-layout: fixed;
 }
 
 #requestDetails.table td{
