@@ -10,6 +10,10 @@ textarea{
     color: cadetblue;
 }
 
+#adminBackground.modal-content{
+    background-color: black;
+}
+
 #adminTables.table{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -24,31 +28,27 @@ textarea{
   text-overflow: ellipsis;
 }
 
-#requestDetails.table{
-    background-color: #373A3C;
-    color: #ECEEEF;
-    word-wrap: break-word;
-    width: 100%;
-}
-
-#requestDetails.table tbody tr td{
-    word-wrap: break-word;
-}
-
-#userPassword{
-    color: #373A3C;
-}
-
-#userPassword:hover{
-    color: inherit;
-}
-
-#adminBackground.modal-content{
-    background-color: black;
+#code{
+    font-family: 'Orbitron', sans-serif;
 }
 
 #login-header h3{
     text-align: center;
+}
+
+#requestDetails.table{
+    background-color: #373A3C;
+    color: #ECEEEF;
+    table-layout: fixed;
+}
+
+#requestDetails.table td{
+    word-wrap: break-word;
+}
+
+#requestTitleButton{
+    background-color: cadetblue;
+    border: none;
 }
 
 #server-message{
@@ -60,11 +60,10 @@ textarea{
     padding-right: 2px;
 }
 
-#code{
-    font-family: 'Orbitron', sans-serif;
+#userPassword{
+    color: #373A3C;
 }
 
-#requestTitleButton{
-    background-color: cadetblue;
-    border: none;
+#userPassword:hover{
+    color: inherit;
 }
