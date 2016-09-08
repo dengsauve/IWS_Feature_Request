@@ -42,9 +42,9 @@ textarea{
 }
 
 #requestDetails.table td{
-    word-wrap: break-word;
-    /*text-overflow: ellipsis;*/
-    white-space: pre-wrap;
+    /*word-wrap: break-word;*/
+    text-overflow: ellipsis;
+    /*white-space: pre-wrap;*/
 }
 
 #requestTitleButton{
