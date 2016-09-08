@@ -33,7 +33,7 @@
                             <form action="/details" method="POST">
                                 <input type="hidden" name="request_id" value="{{request.id}}" />
                                 <th scope="row" class="col-lg-2 col-md-2"><button type="submit" class="btn btn-info btn-sm btn-block" id="requestTitleButton">{{request.title}}</button></td>
-                                <td class="col-lg-3 col-md-3"><a href="{{request.ticketurl}}"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>{{request.description}}</td>
+                                <td class="col-lg-3 col-md-3"><a href="{{request.ticketurl}}" class="icon"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>{{request.description}}</td>
                                 <td class="col-lg-2 col-md-2">{{request.client.name}} - {{request.priority}}</td><!-- Need to select ref col value -->
                                 <td class="col-lg-2 col-md-2">{{request.targetdate}}</td>
                                 <td class="col-lg-1 col-md-1">{{request.productarea.name}}</td><!-- Need to select ref col value -->
