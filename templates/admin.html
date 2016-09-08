@@ -19,10 +19,9 @@
                     <thead>
                         <tr>
                             <th class="col-lg-2 col-md-2">Title</th>
-                            <th class="col-lg-2 col-md-2">Description</th>
+                            <th class="col-lg-3 col-md-3">URL + Description</th>
                             <th class="col-lg-2 col-md-2">Client/Priority</th>
                             <th class="col-lg-2 col-md-2">Target Date</th>
-                            <th class="col-lg-1 col-md-1">URL</th>
                             <th class="col-lg-1 col-md-1">Area</th>
                             <th class="col-lg-2 col-md-2">By User</th>
                         </tr>
@@ -34,10 +33,9 @@
                             <form action="/details" method="POST">
                                 <input type="hidden" name="request_id" value="{{request.id}}" />
                                 <th scope="row" class="col-lg-2 col-md-2"><button type="submit" class="btn btn-info btn-sm btn-block" id="requestTitleButton">{{request.title}}</button></td>
-                                <td class="col-lg-2 col-md-2">{{request.description}}</td>
+                                <td class="col-lg-3 col-md-3"><a href="{{request.ticketurl}}"><span class="glyphicon glyphicon-globe"></span></a>{{request.description}}</td>
                                 <td class="col-lg-2 col-md-2">{{request.client.name}} - {{request.priority}}</td><!-- Need to select ref col value -->
                                 <td class="col-lg-2 col-md-2">{{request.targetdate}}</td>
-                                <td class="col-lg-1 col-md-1">{{request.ticketurl}}</td>
                                 <td class="col-lg-1 col-md-1">{{request.productarea.name}}</td><!-- Need to select ref col value -->
                                 <td class="col-lg-2 col-md-2">{{request.user.username}}</td><!-- Need to select ref col value -->
                             </form>
