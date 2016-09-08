@@ -10,7 +10,7 @@ textarea{
     color: cadetblue;
 }
 
-.table{
+#adminTables.table{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-color: #55595C;
@@ -18,7 +18,7 @@ textarea{
     table-layout:fixed;
 }
 
-.table td {
+#adminTables.table td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
