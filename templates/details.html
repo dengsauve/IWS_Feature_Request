@@ -2,13 +2,14 @@
 {% block title %}Details{% endblock %}
 {% block head %}{{ super() }}{% endblock %}
 {% block body%}
+{% set request = requests[0] %}
 <div class="container-fluid">
     <div class="well">
         <div class="modal-content" id="adminBackground">
 
             <!-- header -->
             <div class="modal-header">
-                <h3 class="modal-title" id="code">Details on {{requests[0].title}}</h3>
+                <h3 class="modal-title" id="code">Details on {{request.title}}</h3>
             </div>
 
             <!-- body -->
@@ -28,8 +29,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            {% set request = requests[0] %}
-                            <th scope="row">{{request.title}}</th>
+                            <td scope="row">{{request.title}}</td>
                             <td>{{request.description}}</td>
                             <td>{{request.client.name}}</td><!-- Need to select ref col value -->
                             <td>{{request.priority}}</td>
