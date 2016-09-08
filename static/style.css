@@ -42,9 +42,9 @@ textarea{
     table-layout: fixed;
 }
 
-#requestDetails.table td{
+/*#requestDetails.table td{
     word-wrap: break-word;
-}
+}*/
 
 #requestTitleButton{
     background-color: cadetblue;

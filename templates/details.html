@@ -28,7 +28,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            {% for request in requests %}
+                            {% set request = requests[0] %}
                             <th scope="row">{{request.title}}</th>
                             <td>{{request.description}}</td>
                             <td>{{request.client.name}}</td><!-- Need to select ref col value -->
@@ -37,7 +37,6 @@
                             <td>{{request.ticketurl}}</td>
                             <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
                             <td>{{request.user.username}}</td><!-- Need to select ref col value -->
-                            {% endfor %}
                         </tr>
                     </tbody>
                 </table>
