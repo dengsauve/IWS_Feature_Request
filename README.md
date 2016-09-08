@@ -1,4 +1,4 @@
-# IWS_Feature_Request
+# IWS Feature Request
 A feature request webapp for client IWS.
 
 ## Synopsis
