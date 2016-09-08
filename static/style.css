@@ -42,9 +42,11 @@ textarea{
     table-layout: fixed;
 }
 
-/*#requestDetails.table td{
+#requestDetails.table td{
     word-wrap: break-word;
-}*/
+    /*text-overflow: ellipsis;*/
+    white-space: pre-wrap;
+}
 
 #requestTitleButton{
     background-color: cadetblue;
