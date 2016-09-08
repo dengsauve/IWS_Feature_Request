@@ -12,34 +12,36 @@
             </div>
 
             <!-- body -->
-            <table class="table table-reflow">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Client</th>
-                        <th>Priority</th>
-                        <th>Target Date</th>
-                        <th>Project URL</th>
-                        <th>Product Area</th>
-                        <th>Requesting User</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        {% for request in requests %}
-                        <th scope="row">{{request.title}}</td>
-                        <td>{{request.description}}</td>
-                        <td>{{request.client.name}}</td><!-- Need to select ref col value -->
-                        <td>{{request.priority}}</td>
-                        <td>{{request.targetdate}}</td>
-                        <td>{{request.ticketurl}}</td>
-                        <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
-                        <td>{{request.user.username}}</td><!-- Need to select ref col value -->
-                        {% endfor %}
-                    </tr>
-                </tbody>
-            </table>
+            <div class="modal-body table-responsive">
+                <table class="table table-reflow">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Client</th>
+                            <th>Priority</th>
+                            <th>Target Date</th>
+                            <th>Project URL</th>
+                            <th>Product Area</th>
+                            <th>Requesting User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for request in requests %}
+                            <th scope="row">{{request.title}}</td>
+                            <td>{{request.description}}</td>
+                            <td>{{request.client.name}}</td><!-- Need to select ref col value -->
+                            <td>{{request.priority}}</td>
+                            <td>{{request.targetdate}}</td>
+                            <td>{{request.ticketurl}}</td>
+                            <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
+                            <td>{{request.user.username}}</td><!-- Need to select ref col value -->
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
