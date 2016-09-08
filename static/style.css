@@ -52,3 +52,7 @@ textarea{
 #code{
     font-family: 'Orbitron', sans-serif;
 }
+
+#requestTitleButton{
+    background-color: cadetblue;
+}
