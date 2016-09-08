@@ -17,28 +17,28 @@
                 <table id="requestDetails" class="table table-hover table-sm table-inverse">
                     <tbody>
                         <tr>
-                            <td scope="row">Title:</td><td>{{request.title}}</td>
+                            <td class="col-md-3" id="detailHeader">Title:</td><td>{{request.title}}</td>
                         </tr>
                         <tr>
-                            <td scope="row">Description</td><td>{{request.description}}</td>
+                            <td class="col-md-3" id="detailHeader">Description</td><td>{{request.description}}</td>
                         </tr>
                         <tr>
-                            <td scope="row">Client</td><td>{{request.client.name}}</td><!-- Need to select ref col value -->
+                            <td class="col-md-3" id="detailHeader">Client</td><td>{{request.client.name}}</td><!-- Need to select ref col value -->
                         </tr>
                         <tr>
-                            <td scope="row">Priority</td><td>{{request.priority}}</td>
+                            <td class="col-md-3" id="detailHeader">Priority</td><td>{{request.priority}}</td>
                         </tr>
                         <tr>
-                            <td scope="row">Target Date</td><td>{{request.targetdate}}</td>
+                            <td class="col-md-3" id="detailHeader">Target Date</td><td>{{request.targetdate}}</td>
                         </tr>
                         <tr>
-                            <td scope="row">Project URL</td><td>{{request.ticketurl}}</td>
+                            <td class="col-md-3" id="detailHeader">Project URL</td><td>{{request.ticketurl}}</td>
                         </tr>
                         <tr>
-                            <td scope="row">Product Area</td><td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
+                            <td class="col-md-3" id="detailHeader">Product Area</td><td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
                         </tr>
                         <tr>
-                            <td scope="row">Requesting User</td><td>{{request.user.username}}</td><!-- Need to select ref col value -->
+                            <td class="col-md-3" id="detailHeader">Requesting User</td><td>{{request.user.username}}</td><!-- Need to select ref col value -->
                         </tr>
                     </tbody>
                 </table>
