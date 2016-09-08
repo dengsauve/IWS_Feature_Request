@@ -32,9 +32,9 @@
                         {% set counter = 1 %}
                         {% for request in requests %}
                         <tr>
-                            <form name="{{ counter }}"  action="/details.html" method="POST">
+                            <form action="/details" method="POST">
                                 <input type="hidden" name="request_id" value="{{request.id}}" />
-                                <th scope="row"><button type="submit" class="btn btn-info">{{request.title}}</button></td>
+                                <th scope="row"><button type="submit" class="btn btn-info btn-sm btn-block">{{request.title}}</button></td>
                                 <td>{{request.description}}</td>
                                 <td>{{request.client.name}}</td><!-- Need to select ref col value -->
                                 <td>{{request.priority}}</td>
