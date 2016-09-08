@@ -4,15 +4,15 @@
 {% block body%}
 <div class="container-fluid">
     <div class="well">
-        <div class="modal-content" id="adminBackground">
+        <div class="modal-content table-responsive" id="adminBackground">
 
             <!-- header -->
             <div class="modal-header">
-                <h3 class="modal-title" id="code">Details on {{request.title}}</h3>
+                <h3 class="modal-title" id="code">Details on {{requests.request.title}}</h3>
             </div>
 
             <!-- body -->
-            <table class="table table-reflow">
+            <table class="table table-hover table-inverse table-reflow">
                 <thead>
                     <tr>
                         <th>Title</th>
