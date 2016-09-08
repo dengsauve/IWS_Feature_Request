@@ -24,6 +24,10 @@ textarea{
   text-overflow: ellipsis;
 }
 
+#requestDetails.table{
+    background-color: #373A3C;
+}
+
 #userPassword{
     color: #373A3C;
 }

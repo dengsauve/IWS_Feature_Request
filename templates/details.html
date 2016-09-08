@@ -13,7 +13,7 @@
 
             <!-- body -->
             <div class="modal-body">
-                <table class="table table-reflow">
+                <table id="requestDetails" class="table table-reflow">
                     <thead>
                         <tr>
                             <th>Title</th>
@@ -29,7 +29,7 @@
                     <tbody>
                         <tr>
                             {% for request in requests %}
-                            <th scope="row">{{request.title}}</td>
+                            <th scope="row">{{request.title}}</th>
                             <td>{{request.description}}</td>
                             <td>{{request.client.name}}</td><!-- Need to select ref col value -->
                             <td>{{request.priority}}</td>
