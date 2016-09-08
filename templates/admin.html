@@ -34,7 +34,7 @@
                         <tr>
                             <form name="{{ counter }}"  action="/details.html" method="POST">
                                 <input type="hidden" name="request_id" value="{{request.id}}" />
-                                <th scope="row"><input type="submit" value="{{request.title}}" />"</td>
+                                <th scope="row"><button type="submit" class="btn btn-info">{{request.title}}</button></td>
                                 <td>{{request.description}}</td>
                                 <td>{{request.client.name}}</td><!-- Need to select ref col value -->
                                 <td>{{request.priority}}</td>
