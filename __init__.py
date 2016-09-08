@@ -102,8 +102,8 @@ def god_mode():
 @app.route('/details/', methods=['POST'], strict_slashes=False)
 def render_details():
     request_id = request.form['request_id']
-    request = Request.query.filter_by(id=request_id)
-    return render_template('details.html', request=request)
+    request_data = Request.query.filter_by(id=request_id)
+    return render_template('details.html', request=request_data)
 
 @app.errorhandler(404)
 def render_page_not_found(error_message):
