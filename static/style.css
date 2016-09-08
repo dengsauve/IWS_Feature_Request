@@ -28,6 +28,7 @@ textarea{
     background-color: #373A3C;
     color: #ECEEEF;
     word-wrap: break-word;
+    width: 100%;
 }
 
 #requestDetails.table tbody tr td{
