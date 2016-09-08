@@ -1,0 +1,44 @@
+{% extends "parent.html" %}
+{% block title %}Details{% endblock %}
+{% block head %}{{ super() }}{% endblock %}
+{% block body%}
+<div class="container-fluid">
+    <div class="well">
+        <div class="modal-content" id="adminBackground">
+
+            <!-- header -->
+            <div class="modal-header">
+                <h3 class="modal-title" id="code">Details on {{request.title}}</h3>
+            </div>
+
+            <!-- body -->
+            <table class="table table-reflow">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Client</th>
+                        <th>Priority</th>
+                        <th>Target Date</th>
+                        <th>Project URL</th>
+                        <th>Product Area</th>
+                        <th>Requesting User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{request.title}}</td>
+                        <td>{{request.description}}</td>
+                        <td>{{request.client.name}}</td><!-- Need to select ref col value -->
+                        <td>{{request.priority}}</td>
+                        <td>{{request.targetdate}}</td>
+                        <td>{{request.ticketurl}}</td>
+                        <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
+                        <td>{{request.user.username}}</td><!-- Need to select ref col value -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

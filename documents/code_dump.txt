@@ -1,1 +1,5 @@
 select Request.title from Request, Client where Client.name="Client A" and Request.client_id = Client.id;
+select Request.title from Request, Client where Client.name="Client B" and Request.client_id = Client.id;
+select Request.title from Request, Client where Client.name="Client C" and Request.client_id = Client.id;
+
+select Request.title from Request, User where User.username="%s" and Request.user_id = User.id;

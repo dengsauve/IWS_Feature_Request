@@ -29,17 +29,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% set counter = 1 %}
                         {% for request in requests %}
                         <tr>
-                            <th scope="row">{{request.title}}</td>
-                            <td>{{request.description}}</td>
-                            <td>{{request.client.name}}</td><!-- Need to select ref col value -->
-                            <td>{{request.priority}}</td>
-                            <td>{{request.targetdate}}</td>
-                            <td>{{request.ticketurl}}</td>
-                            <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
-                            <td>{{request.user.username}}</td><!-- Need to select ref col value -->
-                        <tr>
+                            <form name="{{ counter }}"  action="/details.html" method="POST">
+                                <input type="hidden" name="request_id" value="{{request.id}}" />
+                                <th scope="row"><span onclick="document.{{counter}}.submit();">{{request.title}}</span></td>
+                                <td>{{request.description}}</td>
+                                <td>{{request.client.name}}</td><!-- Need to select ref col value -->
+                                <td>{{request.priority}}</td>
+                                <td>{{request.targetdate}}</td>
+                                <td>{{request.ticketurl}}</td>
+                                <td>{{request.productarea.name}}</td><!-- Need to select ref col value -->
+                                <td>{{request.user.username}}</td><!-- Need to select ref col value -->
+                            </form>
+                        </tr>
+                        {% set counter = counter + 1 %}
                         {% endfor %}
                     </tbody>
                 </table>

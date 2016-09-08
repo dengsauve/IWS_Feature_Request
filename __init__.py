@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -98,6 +98,12 @@ def god_mode():
     areas = ProductArea.query.all()
     users = User.query.all()
     return render_template('admin.html', requests=requests, clients=clients, areas=areas, users=users)
+
+@app.route('/details/', methods=['POST'], strict_slashes=False)
+def render_details():
+    request_id = request.form['request_id']
+    request = Request.query.filter_by(id=request_id)
+    return render_template('details.html', request=request)
 
 @app.errorhandler(404)
 def render_page_not_found(error_message):
