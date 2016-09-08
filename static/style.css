@@ -26,6 +26,12 @@ textarea{
 
 #requestDetails.table{
     background-color: #373A3C;
+    color: #ECEEEF;
+    word-wrap: break-word;
+}
+
+#requestDetails.table tbody tr td{
+    word-wrap: break-word;
 }
 
 #userPassword{
