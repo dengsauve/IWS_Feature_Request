@@ -63,6 +63,10 @@ textarea{
     padding-right: 2px;
 }
 
+#urlIcon{
+    vertical-align: middle;
+}
+
 #userPassword{
     color: #373A3C;
 }
