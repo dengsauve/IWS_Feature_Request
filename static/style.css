@@ -37,6 +37,8 @@ textarea{
 }
 
 #requestDetails.table{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     background-color: #373A3C;
     color: #ECEEEF;
     table-layout: fixed;
