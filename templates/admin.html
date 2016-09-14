@@ -32,7 +32,7 @@
                         <tr>
                             <form action="/details" method="POST">
                                 <input type="hidden" name="request_id" value="{{request.id}}" />
-                                <th scope="row" class="col-lg-2 col-md-2"><input type="image" src="images/go.png" alt="Submit" height="20" width="20"></button>{{request.title}}</td>
+                                <th scope="row" class="col-lg-2 col-md-2"><input type="image" src="static/images/go.png" alt="Submit" height="20" width="20"></button> {{request.title}}</td>
                                 <td class="col-lg-3 col-md-3"><a href="{{request.ticketurl}}"><img id="urlIcon" src="static/images/globe.png" height="20" width="20" title="External URL"></a> {{request.description}}</td>
                                 <td class="col-lg-2 col-md-2">{{request.client.name}} - {{request.priority}}</td><!-- Need to select ref col value -->
                                 <td class="col-lg-2 col-md-2">{{request.targetdate}}</td>

@@ -1,0 +1,40 @@
+{% extends "parent.html" %}
+{% block title %}User Details{% endblock %}
+{% block head %}{{ super() }}{% endblock %}
+{% block body%}
+{% set user = users[0] %}
+<div class="container-fluid">
+    <div class="well">
+        <div class="modal-content" id="adminBackground">
+
+            <!-- header -->
+            <div class="modal-header">
+                <h3 class="modal-title" id="code">Details on {{user.username}}</h3>
+            </div>
+
+            <!-- body -->
+            <div class="modal-body">
+                <table id="userDetails" class="table table-hover table-sm table-inverse">
+                    <tbody>
+                        <tr>
+                            <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">Username:</td><td class="col-sm-8 col-md-9 col-lg-10">{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">E-Mail:</td><td class="col-sm-8 col-md-9 col-lg-10">{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">Password:</td><td class="col-sm-8 col-md-9 col-lg-10" id="userPassword">{{user.password}}</td><!-- Need to select ref col value -->
+                        </tr>
+                        <tr>
+                            <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">User Type:</td><td class="col-sm-8 col-md-9 col-lg-10">{% if user.isAdmin %}<td>Administrator</td>{% else %}<td>User</td>{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">Client:</td><td class="col-sm-8 col-md-9 col-lg-10">{{user.client.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
