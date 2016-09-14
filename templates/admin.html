@@ -30,9 +30,9 @@
                         {% set counter = 1 %}
                         {% for request in requests %}
                         <tr>
-                            <form action="/details" method="POST">
+                            <form action="/request_details" method="POST">
                                 <input type="hidden" name="request_id" value="{{request.id}}" />
-                                <th scope="row" class="col-lg-2 col-md-2"><input type="image" src="static/images/go.png" alt="Submit" height="20" width="20"></button> {{request.title}}</td>
+                                <th scope="row" class="col-lg-2 col-md-2"><input id ="goIcon" type="image" src="static/images/go.png" alt="Submit" height="20" width="20"> {{request.title}}</td>
                                 <td class="col-lg-3 col-md-3"><a href="{{request.ticketurl}}"><img id="urlIcon" src="static/images/globe.png" height="20" width="20" title="External URL"></a> {{request.description}}</td>
                                 <td class="col-lg-2 col-md-2">{{request.client.name}} - {{request.priority}}</td><!-- Need to select ref col value -->
                                 <td class="col-lg-2 col-md-2">{{request.targetdate}}</td>
@@ -98,15 +98,18 @@
                     <tbody>
                         {% for user in users %}
                         <tr>
-                            <th scope="row">{{ user.username }}</td>
-                            <td>{{ user.email }}</td>
-                            <td id="userPassword">{{ user.password }}</td>
-                            {% if user.isAdmin %}
-                            <td>Administrator</td>
-                            {% else %}
-                            <td>User</td>
-                            {% endif %}
-                            <td>{{ user.client.name }}</td><!-- Need to select ref col value -->
+                            <form action="/user_details" method="POST">
+                                <input type="hidden" name="user_id" value="{{user.id}}" />
+                                <th scope="row"><input id ="goIcon" type="image" src="static/images/go.png" alt="Submit" height="20" width="20"> {{ user.username }}</td>
+                                <td>{{ user.email }}</td>
+                                <td id="userPassword">{{ user.password }}</td>
+                                {% if user.isAdmin %}
+                                <td>Administrator</td>
+                                {% else %}
+                                <td>User</td>
+                                {% endif %}
+                                <td>{{ user.client.name }}</td><!-- Need to select ref col value -->
+                            </form>
                         </tr>
                         {% endfor %}
                     </tbody>

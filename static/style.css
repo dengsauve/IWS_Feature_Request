@@ -32,6 +32,10 @@ textarea{
     font-family: 'Orbitron', sans-serif;
 }
 
+#goIcon{
+    vertical-align: bottom;
+}
+
 #login-header h3{
     text-align: center;
 }

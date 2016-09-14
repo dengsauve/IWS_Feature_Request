@@ -82,17 +82,6 @@ class User(db.Model):
         return '<User> %r' % self.username
 
 
-@app.route('/')
-@app.route('/login/', strict_slashes=False)
-def render_main():
-    return render_template('login.html')
-
-@app.route('/home', methods=['GET', 'POST'])
-def render_home():
-    clients = Client.query.with_entities(Client.name)
-    areas = ProductArea.query.with_entities(ProductArea.name)
-    return render_template('index.html', areas=areas, clients=clients)
-
 @app.route('/admin')
 def god_mode():
     requests = Request.query.all()
@@ -101,11 +90,28 @@ def god_mode():
     users = User.query.all()
     return render_template('admin.html', requests=requests, clients=clients, areas=areas, users=users)
 
-@app.route('/details/', methods=['POST'], strict_slashes=False)
+@app.route('/home', methods=['GET', 'POST'])
+def render_home():
+    clients = Client.query.with_entities(Client.name)
+    areas = ProductArea.query.with_entities(ProductArea.name)
+    return render_template('index.html', areas=areas, clients=clients)
+
+@app.route('/')
+@app.route('/login/', strict_slashes=False)
+def render_main():
+    return render_template('login.html')
+
+@app.route('/request_details/', methods=['POST'], strict_slashes=False)
 def render_details():
     request_id = request.form['request_id']
     request_data = Request.query.filter_by(id=request_id)
     return render_template('details.html', requests=request_data)
+
+@app.route('/user_details/', methods=['POST'], strict_slashes=False)
+def render_details():
+    user_id = request.form['request_id']
+    user_data = User.query.filter_by(id=user_id)
+    return render_template('users.html', users=user_data)
 
 @app.errorhandler(404)
 def render_page_not_found(error_message):
