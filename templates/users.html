@@ -26,7 +26,7 @@
                             <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">Password:</td><td class="col-sm-8 col-md-9 col-lg-10" id="userPassword">{{user.password}}</td><!-- Need to select ref col value -->
                         </tr>
                         <tr>
-                            <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">User Type:</td><td class="col-sm-8 col-md-9 col-lg-10">{% if user.isAdmin %}<td>Administrator</td>{% else %}<td>User</td>{% endif %}</td>
+                            <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">User Type:</td><td class="col-sm-8 col-md-9 col-lg-10">{% if user.isAdmin %}Administrator{% else %}User{% endif %}</td>
                         </tr>
                         <tr>
                             <td class="col-sm-4 col-md-3 col-lg-2" id="detailHeader">Client:</td><td class="col-sm-8 col-md-9 col-lg-10">{{user.client.name}}</td>
