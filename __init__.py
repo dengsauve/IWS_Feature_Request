@@ -81,14 +81,30 @@ class User(db.Model):
     def __repr__(self):
         return '<User> %r' % self.username
 
+@app.route('/add_user')
+def add_user():
+    clients = Client.query.all()
+    return render_template('newuser.html', clients=clients)
+
 
 @app.route('/admin')
 def god_mode():
     requests = Request.query.all()
     clients = Client.query.all()
     areas = ProductArea.query.all()
-    users = User.query.all()
+    users = User.query.order_by(User.username)
     return render_template('admin.html', requests=requests, clients=clients, areas=areas, users=users)
+
+@app.route('/commit_user', methods=['POST'])
+def commit_user():
+    username = request.form['username']
+    email = request.form['email']
+    password = request.form['password']
+    client_id = request.form['client_id']
+    newbie = User(username, email, password, False, client_id)
+    db.session.add(newbie)
+    db.session.commit()
+    return redirect('/admin')
 
 @app.route('/home', methods=['GET', 'POST'])
 def render_home():

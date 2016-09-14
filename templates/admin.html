@@ -100,7 +100,7 @@
                         <tr>
                             <form action="/user_details" method="POST">
                                 <input type="hidden" name="user_id" value="{{user.id}}" />
-                                <th scope="row"><input id ="goIcon" type="image" src="static/images/go.png" alt="Submit" height="20" width="20"> {{ user.username }}</td>
+                                <th scope="row"><input id ="goIcon" type="image" src="static/images/go.png" alt="Submit" height="20" width="20"> {{ user.username }}</th>
                                 <td>{{ user.email }}</td>
                                 <td id="userPassword">{{ user.password }}</td>
                                 <td>
@@ -113,6 +113,13 @@
                             </form>
                         </tr>
                         {% endfor %}
+                        <tr>
+                            <th scope="row"><a href="/add_user"><img title="Add New User" src="static/images/go.png" height="20" width="20"></a> Add User</th>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

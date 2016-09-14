@@ -1,0 +1,50 @@
+{% extends "parent.html" %}
+{% block title %}User Details{% endblock %}
+{% block head %}{{ super() }}{% endblock %}
+{% block body%}
+<div class="container-fluid">
+    <div class="well">
+        <div class="modal-content" id="adminBackground">
+
+            <!-- header -->
+            <div class="modal-header">
+                <h3 class="modal-title" id="code">Create New User</h3>
+            </div>
+
+            <!-- body -->
+            <div class="modal-body">
+                <div class="well" id="creationForm">
+                    <form role="form" action="/commit_user" method='POST'>
+                        <h4>Username</h4>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Title" name="username">
+                        </div>
+                        <h4>E-mail</h4>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="member@group.com" name="email">
+                        </div>
+                        <h4>Password</h4>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                        <h4>Which Client do you Represent?</h4>
+                        <div class="form-group">
+                            <select class="form-control" name="client_id">
+                                {% for client in clients %}
+                                <option value="{{ client.id }}">{{ client.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-block" action="submit">Submit User</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

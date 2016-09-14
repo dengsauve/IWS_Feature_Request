@@ -32,6 +32,17 @@ textarea{
     font-family: 'Orbitron', sans-serif;
 }
 
+#creationForm{
+    background-color: #2f2e2e;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#creationForm h4{
+    font-family: 'Orbitron', sans-serif;
+    color: cadetblue;
+}
+
 #goIcon{
     vertical-align: bottom;
 }
@@ -69,6 +80,7 @@ textarea{
 
 #urlIcon{
     vertical-align: middle;
+    color: blue;
 }
 
 #userDetails.table{
