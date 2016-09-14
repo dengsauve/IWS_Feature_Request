@@ -102,13 +102,13 @@ def render_main():
     return render_template('login.html')
 
 @app.route('/request_details/', methods=['POST'], strict_slashes=False)
-def render_details():
+def render_request_details():
     request_id = request.form['request_id']
     request_data = Request.query.filter_by(id=request_id)
     return render_template('details.html', requests=request_data)
 
 @app.route('/user_details/', methods=['POST'], strict_slashes=False)
-def render_details():
+def render_user_details():
     user_id = request.form['request_id']
     user_data = User.query.filter_by(id=user_id)
     return render_template('users.html', users=user_data)
