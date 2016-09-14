@@ -1,0 +1,27 @@
+{% extends "parent.html" %}
+{% block title %}Whoops...{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+    <div class="well">
+        <div class="modal-content">
+
+            <!-- header -->
+            <div class="modal-header">
+                <h3 class="modal-title" id="login-header">I'm afraid I can't do that, Dave.</h3>
+            </div>
+
+            <div class="modal-body">
+                <p>Server Says: <span id="server-message">{{ error }}</span>, and that's why you're here. Please enjoy your stay, and return to the homepage when ready.</p>
+            </div>
+
+            <!-- button -->
+            <div class="modal-footer">
+                <a href="/home"><button class="btn btn-primary btn-block" title="I don't want to let you go 'till you see the light!">Take me Home Tonight</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

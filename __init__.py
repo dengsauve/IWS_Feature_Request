@@ -109,7 +109,7 @@ def render_request_details():
 
 @app.route('/user_details/', methods=['POST'], strict_slashes=False)
 def render_user_details():
-    user_id = request.form['request_id']
+    user_id = request.form['user_id']
     user_data = User.query.filter_by(id=user_id)
     return render_template('users.html', users=user_data)
 
@@ -120,6 +120,10 @@ def render_page_not_found(error_message):
 @app.errorhandler(500)
 def render_page_not_found(error_message):
     return render_template('500.html', error=error_message)
+
+@app.errorhandler(400)
+def render_page_not_found(error_message):
+    return render_template('400.html', error=error_message)
 
 
 if __name__ == '__main__':
