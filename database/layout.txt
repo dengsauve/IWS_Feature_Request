@@ -1,0 +1,35 @@
+TABLE "Client"
+        id INTEGER NOT NULL,
+        name VARCHAR(20),
+        PRIMARY KEY (id)
+
+TABLE "ProductArea"
+        id INTEGER NOT NULL,
+        name VARCHAR(20),
+        PRIMARY KEY (id)
+
+TABLE "Request"
+        id INTEGER NOT NULL,
+        title VARCHAR(80),
+        description VARCHAR(1000),
+        client_id INTEGER,
+        priority INTEGER,
+        targetdate DATE,
+        ticketurl VARCHAR(200),
+        productarea_id INTEGER,
+        user_id INTEGER,
+        PRIMARY KEY (id),
+        FOREIGN KEY(client_id) REFERENCES "Client" (id),
+        FOREIGN KEY(productarea_id) REFERENCES "ProductArea" (id),
+        FOREIGN KEY(user_id) REFERENCES "User" (id)
+
+TABLE "User"
+        id INTEGER NOT NULL,
+        username VARCHAR(50),
+        email VARCHAR(50),
+        password VARCHAR(16),
+        "isAdmin" BOOLEAN,
+        client_id INTEGER,
+        PRIMARY KEY (id),
+        CHECK ("isAdmin" IN (0, 1)),
+        FOREIGN KEY(client_id) REFERENCES "Client" (id)

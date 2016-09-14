@@ -45,3 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*.db
+flaskEnvironment/
+flaskEnvironment/*
+
+flaskEnvironment/bin/activate
+flaskEnvironment/bin/easy_install
+flaskEnvironment/bin/pip
