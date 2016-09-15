@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from flask import Flask, render_template, request, url_for, redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy, exists
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////var/www/FlaskApp/FlaskApp/database/flaskapp.db"
@@ -106,16 +106,28 @@ def commit_user():
     db.session.commit()
     return redirect('/admin')
 
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/home', methods=['POST'])
 def render_home():
+    user_id = request.args['user_id']
     clients = Client.query.with_entities(Client.name)
     areas = ProductArea.query.with_entities(ProductArea.name)
-    return render_template('index.html', areas=areas, clients=clients)
+    return render_template('index.html', areas=areas, clients=clients, user_id=user_id, code=307)
 
 @app.route('/')
 @app.route('/login/', strict_slashes=False)
 def render_main():
     return render_template('login.html')
+
+@app.route('/new_request/', methods=['POST'], strict_slashes=False)
+def commit_request():
+    title = request.form['title']
+    description = request.form['description']
+    client_id = request.form['client_id']
+    priority = request.form['priority']
+    targetdate = request.form['targetdate']
+    url = request.form['url']
+    productarea = request.form['productarea']
+    user = request.form['user']
 
 @app.route('/request_details/', methods=['POST'], strict_slashes=False)
 def render_request_details():
@@ -128,6 +140,24 @@ def render_user_details():
     user_id = request.form['user_id']
     user_data = User.query.filter_by(id=user_id)
     return render_template('users.html', users=user_data)
+
+@app.route('/verify/', methods=['POST'], strict_slashes=False)
+def check_credentials():
+    username = request.form['username']
+    password = request.form['password']
+    if username and password:
+        ret = db.query(exists().where(User.username==username))
+        if ret:
+            candidate = User.query.filter_by(username=username) # NEED TO CLEANLY VERIFY USERNAME INPUT!!!
+            if candidate[0].password == password:
+                return redirect(url_for('.render_home', user_id=candidate[0].id), code=307)
+            else:
+                return redirect(url_for('.render_main'))
+        else:
+            return redirect(url_for('.render_main'))
+    else:
+        return redirect(url_for('.render_main'))
+
 
 @app.errorhandler(404)
 def render_page_not_found(error_message):

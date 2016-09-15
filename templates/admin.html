@@ -96,6 +96,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <th scope="row"><a href="/add_user"><img title="Add New User" src="static/images/go.png" height="20" width="20"></a> Add User</th>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
                         {% for user in users %}
                         <tr>
                             <form action="/user_details" method="POST">
@@ -113,13 +120,6 @@
                             </form>
                         </tr>
                         {% endfor %}
-                        <tr>
-                            <th scope="row"><a href="/add_user"><img title="Add New User" src="static/images/go.png" height="20" width="20"></a> Add User</th>
-                            <td><span></span></td>
-                            <td><span></span></td>
-                            <td><span></span></td>
-                            <td><span></span></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

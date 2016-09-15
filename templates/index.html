@@ -13,52 +13,53 @@
 
             <!-- body -->
             <div class="modal-body">
-                <form role="form">
+                <form role="form" action="/new_request" method="POST">
+                    <input name="user_id" value="{{ user_id }}" hidden="hidden" />
                     <h4>Feature Request Name?</h4>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Title">
+                        <input type="text" class="form-control" placeholder="Title" name="title">
                     </div>
                     <h4>Tell us a little or a lot about this feature.</h4>
                     <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="Detailed description of your feature request."></textarea>
+                        <textarea class="form-control" rows="5" placeholder="Detailed description of your feature request." name="description"></textarea>
                     </div>
                     <h4>Who are you?</h4>
                     <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control" name="client_id">
                             {% for client in clients %}
-                            <option>{{ client.name }}</option>
+                            <option value="{{ client.id }}">{{ client.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <h4>What is the priority of this request?</h4>
                     <div class="form-group">
-                        <select class="form-control">
-                            <option>Priority 1</option>
-                            <option>Priority 2</option>
-                            <option>Priority n</option>
+                        <select class="form-control" name="priority">
+                            <option value="1">Priority 1</option>
+                            <option value="2">Priority 2</option>
+                            <option value="3">Priority n</option>
                         </select>
                     </div>
                     <h4>When will this request be implemented? (Please allow at least 2 weeks.)</h4>
-                    <input type="text" class="form-control" id="datepicker">
+                    <input type="text" class="form-control" id="datepicker" name="targetdate">
                     <h4>Ticket urls can go here.</h4>
                     <div class="form-group">
-                        <input type="url" class="form-control" placeholder="Relevant Ticket URL">
+                        <input type="url" class="form-control" placeholder="Relevant Ticket URL" name="url">
                     </div>
                     <h4>What production area does this concern?</h4>
                     <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control" name="productarea">
                             {% for area in areas %}
                             <option>{{ area.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
-                </form>
             </div>
 
             <!-- button -->
             <div class="modal-footer">
-                <button class="btn btn-primary btn-block">Submit Request</button>
+                <button class="btn btn-primary btn-block" value="submit">Submit Request</button>
             </div>
+                </form>
         </div>
     </div>
 </div>

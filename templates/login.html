@@ -15,22 +15,22 @@
 
                 <!-- body -->
                 <div class="modal-body">
-                    <form role="form">
+                    <form role="form" action="/verify" method="POST">
                         <h4>Username</h4>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="email">
+                            <input type="text" class="form-control" placeholder="Username" name="username">
                         </div>
                         <h4>Password</h4>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="password">
+                            <input type="password" class="form-control" placeholder="password" name="password">
                         </div>
-                    </form>
                 </div>
 
                 <!-- button -->
                 <div class="modal-footer">
-                    <a href="/home"><button class="btn btn-primary btn-block">Continue</button></a>
+                    <button class="btn btn-primary btn-block" value="submit">Continue</button>
                 </div>
+                    </form>
             </div>
         </div>
     </div>
