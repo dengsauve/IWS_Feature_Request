@@ -51,6 +51,19 @@ textarea{
     text-align: center;
 }
 
+#loginStatus h4{
+    display: inline-block;
+}
+
+#loginStatusTitle{
+    float: left;
+}
+
+#loginStatusUser{
+    float: right;
+    vertical-align: baseline;
+}
+
 #requestDetails.table{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

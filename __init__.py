@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
-from flask import Flask, render_template, request, url_for, redirect
-from flask_sqlalchemy import SQLAlchemy, exists
+from flask import Flask, render_template, request, url_for, redirect, session, escape
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////var/www/FlaskApp/FlaskApp/database/flaskapp.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+app.secret_key = "WhatASuperSecretKeyIhavemade!$@%#^$&$*"
 
 class Request(db.Model):
     __tablename__ = 'Request'
@@ -108,10 +109,14 @@ def commit_user():
 
 @app.route('/home', methods=['POST'])
 def render_home():
-    user_id = request.args['user_id']
+    if 'username' in session:
+        user_id = escape(session['username'])
+    else:
+        user_id = 0
+    username = User.query.filter_by(id=int(user_id))
     clients = Client.query.with_entities(Client.name)
     areas = ProductArea.query.with_entities(ProductArea.name)
-    return render_template('index.html', areas=areas, clients=clients, user_id=user_id, code=307)
+    return render_template('index.html', areas=areas, clients=clients, user_id=user_id, username=username[0])
 
 @app.route('/')
 @app.route('/login/', strict_slashes=False)
@@ -143,20 +148,21 @@ def render_user_details():
 
 @app.route('/verify/', methods=['POST'], strict_slashes=False)
 def check_credentials():
-    username = request.form['username']
-    password = request.form['password']
-    if username and password:
-        ret = db.query(exists().where(User.username==username))
-        if ret:
-            candidate = User.query.filter_by(username=username) # NEED TO CLEANLY VERIFY USERNAME INPUT!!!
-            if candidate[0].password == password:
-                return redirect(url_for('.render_home', user_id=candidate[0].id), code=307)
-            else:
-                return redirect(url_for('.render_main'))
+    input_username = request.form['username']
+    input_password = request.form['password']
+    usernames = User.query.with_entities(User.username)
+    unames = []
+    for i in usernames:
+        unames.append(i.username)
+    if input_username in unames:
+        candidate = User.query.filter_by(username=input_username) # NEED TO CLEANLY VERIFY USERNAME INPUT!!!
+        if candidate[0].password == input_password:
+            session['username'] = candidate[0].id
+            return redirect(url_for('.render_home')), 307
         else:
-            return redirect(url_for('.render_main'))
+            return redirect(url_for('.render_main')), 307
     else:
-        return redirect(url_for('.render_main'))
+        return redirect(url_for('.render_main')), 307
 
 
 @app.errorhandler(404)
