@@ -112,7 +112,7 @@ def render_home():
     if 'username' in session:
         user_id = escape(session['username'])
     else:
-        user_id = 0
+        return redirect(url_for('.render_main'))
     username = User.query.filter_by(id=int(user_id))
     clients = Client.query.with_entities(Client.name)
     areas = ProductArea.query.with_entities(ProductArea.name)
